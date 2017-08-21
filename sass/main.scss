@@ -1,1 +1,59 @@
 @import "bootstrap-reboot";
+
+.container {
+  display: block;
+  margin: 0 auto;
+  padding: 0 2.94118%;
+  max-width: 1560px;
+}
+
+.holder {
+  max-width: 72%;
+}
+
+section {
+  margin-bottom: 2rem;
+  img {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.content {
+  padding-left: 22%;
+}
+
+h2 {
+  margin-top: 2rem;
+}
+
+.m-hdr {
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+}
+
+.m-hdr .logo-wrap {
+  .logo {
+    margin-bottom: -9px;
+    text-decoration: none;
+    font-size: 2rem;
+    color: #000;
+  }
+  .logo span { white-space: nowrap; }
+  .logo .code {
+    font-family: "Courier New", Courier, monospace;
+  }
+  .name {
+    font-size: 0.8rem;
+    display: inline-block;
+    margin-bottom: 0;
+    margin-left: 12px;
+  }
+  .transcr {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 0.6rem;
+    margin-bottom: 0;
+    margin-left: 2px;
+    color: #646464;
+  }
+}

@@ -124,14 +124,14 @@ sup {
 }
 
 a {
-  color: #007bff;
+  color: #ce4308;
   text-decoration: none;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
 }
 
 a:hover {
-  color: #0056b3;
+  color: #ce4308;
   text-decoration: underline;
 }
 
@@ -170,6 +170,7 @@ figure {
 img {
   vertical-align: middle;
   border-style: none;
+  max-width: 100%;
 }
 
 svg:not(:root) {
