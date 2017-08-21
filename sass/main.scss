@@ -31,7 +31,17 @@ h2 {
   margin-bottom: 2rem;
 }
 
+.mail-wrap {
+  display: inline-block;
+  float: right;
+  vertical-align: top;
+  a {
+    line-height: 82px;
+  }
+}
+
 .m-hdr .logo-wrap {
+  display: inline-block;
   .logo {
     margin-bottom: -9px;
     text-decoration: none;
