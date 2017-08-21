@@ -14,15 +14,14 @@ gulp.task('sass', function() {
   .pipe(sass({outputStyle: 'compressed'}))
   .pipe(prefix('last 20 versions', '> 1%', 'ie 11'))
   .pipe(plumber())
-  .pipe(gulp.dest('css'));
+  .pipe(gulp.dest('dist/css'));
 });
 
 gulp.task('browser-sync', function() {
-  browserSync.init(['css/*.css', 'js/**/*.js', 'index.html'], {
+  browserSync.init(['dist/css/*.css', '/dist/**/*.js', '/dist/index.html'], {
     server: {
-      baseDir: './'
-    },
-    notify: false
+      baseDir: 'dist/'
+    }
   });
 });
 
@@ -30,26 +29,25 @@ gulp.task('scripts', function() {
   gulp.src('js/*.js')
   .pipe(uglify())
   .pipe(rename({
-    dirname: "min",
     suffix: ".min",
   }))
-  .pipe(gulp.dest('js'))
+  .pipe(gulp.dest('dist/js/'))
 });
 
 gulp.task('images', function () {
   return gulp.src('images/*')
   .pipe(imagemin({
     progressive: true,
-    svgoPlugins: [{removeViewBox: false}],
+    svgoPlugins: [{removeViewBox: true}],
     use: [pngquant()]
   }))
-  .pipe(gulp.dest('images'));
+  .pipe(gulp.dest('dist/images'))
 });
 
 gulp.task('views', function buildHTML() {
   return gulp.src('views/**/*.pug')
   .pipe(pug())
-  .pipe(gulp.dest('./'))
+  .pipe(gulp.dest('dist/'))
 });
 
 gulp.task('default', ['views', 'sass', 'browser-sync', 'scripts', 'images'], function () {
