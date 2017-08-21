@@ -1,0 +1,22 @@
+{
+  "name": "website-codenohito",
+  "description": "Code No Hito — agile web-applications development with Ruby on Rails",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codenohito/website"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-imagemin": "^3.3.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-pug": "^3.3.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0",
+    "imagemin-pngquant": "^5.0.1"
+  },
+  "dependencies": {}
+}
