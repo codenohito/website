@@ -11,9 +11,9 @@ var pug         = require('gulp-pug');
 
 gulp.task('sass', function() {
   gulp.src('sass/main.scss')
+  .pipe(plumber())
   .pipe(sass({outputStyle: 'compressed'}))
   .pipe(prefix('last 20 versions', '> 1%', 'ie 11'))
-  .pipe(plumber())
   .pipe(gulp.dest('dist/css'));
 });
 
@@ -27,6 +27,7 @@ gulp.task('browser-sync', function() {
 
 gulp.task('scripts', function() {
   gulp.src('js/*.js')
+  .pipe(plumber())
   .pipe(uglify())
   .pipe(rename({
     suffix: ".min",
@@ -36,6 +37,7 @@ gulp.task('scripts', function() {
 
 gulp.task('images', function () {
   return gulp.src('images/*')
+  .pipe(plumber())
   .pipe(imagemin({
     progressive: true,
     svgoPlugins: [{removeViewBox: true}],
@@ -46,6 +48,7 @@ gulp.task('images', function () {
 
 gulp.task('views', function buildHTML() {
   return gulp.src('views/*.pug')
+  .pipe(plumber())
   .pipe(pug())
   .pipe(gulp.dest('dist/'))
 });
