@@ -35,7 +35,19 @@ gulp.task('scripts', function() {
   .pipe(gulp.dest('dist/js/'))
 });
 
-gulp.task('images', function () {
+gulp.task('icons', function () {
+  return gulp.src('favicon.ico')
+  .pipe(plumber())
+  .pipe(gulp.dest('dist/'));
+});
+
+gulp.task('favicon', function () {
+  return gulp.src('ico/*')
+  .pipe(plumber())
+  .pipe(gulp.dest('dist/ico'));
+});
+
+gulp.task('images', ['icons', 'favicon'], function () {
   return gulp.src('images/*')
   .pipe(plumber())
   .pipe(imagemin({
@@ -43,11 +55,11 @@ gulp.task('images', function () {
     svgoPlugins: [{removeViewBox: true}],
     use: [pngquant()]
   }))
-  .pipe(gulp.dest('dist/images'))
+  .pipe(gulp.dest('dist/images'));
 });
 
 gulp.task('views', function buildHTML() {
-  return gulp.src('views/*/*.pug')
+  return gulp.src('views/**/*.pug')
   .pipe(plumber())
   .pipe(pug())
   .pipe(gulp.dest('dist/'))

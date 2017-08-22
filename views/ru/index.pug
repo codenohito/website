@@ -1,10 +1,23 @@
-doctype html  
-html(lang='ru')  
+doctype html
+html(lang='ru')
   head
     meta(charset="UTF-8")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible" content="ie=edge")
-    title Codenohito
+    title Коденохито — гибкая разработка веб-приложений на Ruby on Rails
+    meta(name="description" content="Веб-разработка с проектирования до готового веб-приложения")
+    meta(name="twitter:card" content="summary")
+    meta(property="og:type" content="website")
+    meta(property="og:title" content="Коденохито — гибкая разработка веб-приложений на Ruby on Rails")
+    meta(property="og:description" content="Веб-разработка с проектирования до готового веб-приложения")
+    meta(property="og:image" content="http://codenohito.ru/ico/cnh_logo_image.png")
+    link(rel="icon" sizes="16x16 32x32 48x48 64x64" href="/favicon.ico")
+    <!--[if IE]>
+    <link rel="shortcut icon" href="/favicon.ico">
+    <![endif]-->
+    link(rel="apple-touch-icon" href="/ico/cnh_touch_icon.png")
+    meta(name="msapplication-TileColor" content="#fff")
+    meta(name="msapplication-TileImage" content="/ico/cnh_tile_image.png")
     link(href='/css/main.css', rel='stylesheet')
     script.
       document.documentElement.className = 'js';
@@ -18,7 +31,7 @@ html(lang='ru')
       return support;
       }
   body
-    main      
+    main
       include includes/hdr.pug
       .container
         .morph-wrap
@@ -36,7 +49,9 @@ html(lang='ru')
           include includes/portfolio.pug
       footer.m-ftr
         .container
-          a(href="mailto:http://mstrdymio@gmail.com") mstrdymio@gmail.com      
+          | Контакт:
+          |
+          a(href="mailto:http://mstrdymio@gmail.com") mstrdymio@gmail.com
     script(src='/js/main.min.js')
     script(src='/js/imagesloaded.pkgd.min.min.js')
     script(src='/js/anime.min.min.js')
