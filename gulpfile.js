@@ -18,7 +18,7 @@ gulp.task('sass', function() {
 });
 
 gulp.task('browser-sync', function() {
-  browserSync.init(['dist/css/*.css', '/dist/**/*.js', '/dist/index.html'], {
+  browserSync.init(['dist/css/*.css', 'dist/js/*.js', 'dist/index.html'], {
     server: {
       baseDir: 'dist/'
     }
