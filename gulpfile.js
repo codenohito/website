@@ -45,7 +45,7 @@ gulp.task('images', function () {
 });
 
 gulp.task('views', function buildHTML() {
-  return gulp.src('views/**/*.pug')
+  return gulp.src('views/*.pug')
   .pipe(pug())
   .pipe(gulp.dest('dist/'))
 });
