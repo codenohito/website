@@ -6,14 +6,39 @@ html(lang='ru')
     meta(http-equiv="X-UA-Compatible" content="ie=edge")
     title Codenohito
     link(href='/css/main.css', rel='stylesheet')
+    script.
+      document.documentElement.className = 'js';
+      var supportsCssVars = function() {
+      var s = document.createElement('style'),
+      support;
+      s.innerHTML = "root: { --tmp-var: bold; }";
+      document.head.appendChild(s);
+      support = !!(window.CSS && window.CSS.supports && window.CSS.supports('font-weight', 'var(--tmp-var)'));
+      s.parentNode.removeChild(s);
+      return support;
+      }
   body
-    include includes/hdr.pug
-    .container
-      section.holder
-        include includes/about.pug
-        include includes/tools.pug
-        include includes/team_main.pug
-        include includes/team_reserve.pug
-        include includes/team_project.pug
-        include includes/portfolio.pug
-    script(type='text/javascript' src='/js/main.min.js')   
+    main      
+      include includes/hdr.pug
+      .container
+        .morph-wrap
+          svg.morph(width='1400', height='770', viewbox='0 0 1400 770')
+            polygon(points='700,84.4 1047.1,685.6 352.9,685.6 352.9,685.6 352.9,685.6 352.9,685.6')
+        section.holder
+          .content-wrap
+            include includes/about.pug
+          .content-wrap
+            include includes/tools.pug
+            include includes/team_main.pug
+          .content-wrap
+            include includes/team_reserve.pug
+            include includes/team_project.pug
+          include includes/portfolio.pug
+      footer.m-ftr
+        .container
+          a(href="mailto:http://mstrdymio@gmail.com") mstrdymio@gmail.com      
+    script(src='/js/main.min.js')
+    script(src='/js/imagesloaded.pkgd.min.min.js')
+    script(src='/js/anime.min.min.js')
+    script(src='/js/scrollMonitor.min.js')
+    script(src='/js/morph.min.js')

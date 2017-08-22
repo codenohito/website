@@ -1,14 +1,22 @@
 @import "bootstrap-reboot";
+@import "morph";
+
+body {
+  padding: 60px 0;
+}
 
 .container {
   display: block;
   margin: 0 auto;
-  padding: 0 2.94118%;
+  padding: 0 1rem;
   max-width: 1560px;
 }
 
 .holder {
   max-width: 72%;
+  @media (max-width: 720px) {
+    max-width: 100%;
+  }
 }
 
 section {
@@ -19,24 +27,56 @@ section {
 }
 
 .content {
-  padding-left: 22%;
+  padding-left: 13%;
+  @media (max-width: 720px) {
+    padding-left: 0%;
+  }
 }
 
 h2 {
   margin-top: 2rem;
 }
 
-.m-hdr {
-  padding: 1rem 0;
-  margin-bottom: 2rem;
+h3 {
+  margin-bottom: 1.5rem;
 }
 
-.mail-wrap {
+.m-hdr {
+  padding: 1rem 0;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.m-ftr {
+  padding: 1rem 0;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: left;
+  a {
+    color: #000;
+  }
+}
+
+.hdr-right-wrap {
   display: inline-block;
   float: right;
   vertical-align: top;
+  text-align: right;
+  width: 50%;
   a {
-    line-height: 82px;
+    color: #000;
+  }
+  .lang-switch {
+    display: inline-block;
+    a.active {
+      text-decoration: underline;
+    }
   }
 }
 
@@ -45,7 +85,7 @@ h2 {
   .logo {
     margin-bottom: -9px;
     text-decoration: none;
-    font-size: 2rem;
+    font-size: 1.2rem;
     color: #000;
   }
   .logo span { white-space: nowrap; }
@@ -62,5 +102,27 @@ h2 {
 }
 
 .content-about {
-  
+  h2 {
+    vertical-align: top;
+    width: 20%;
+    min-width: 140px;
+    display: inline-block;
+    margin-top: 0;
+  }
+  .content-right {
+    width: 80%;
+    display: inline-block;
+  }
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  margin: 0 -1rem;
+  .col {
+    padding: 0 1rem;
+  }
+  @media (max-width: 980px) {
+    flex-direction: column;
+  }
 }

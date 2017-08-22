@@ -57,5 +57,5 @@ gulp.task('default', ['views', 'sass', 'browser-sync', 'scripts', 'images'], fun
   gulp.watch('sass/**/*.scss', ['sass']);
   gulp.watch('js/**/*.js', ['scripts']);
   gulp.watch('images/*', ['images']);
-  gulp.watch('views/**/*.pug', ['views']);
+  gulp.watch('views/**/**/*.pug', ['views']);
 });
