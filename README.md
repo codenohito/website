@@ -1,24 +1,24 @@
-# website
+{code}の人 Website
+==================
+
 Website of our team — http://codenohito.ru/
-## Getting started ##
-Clone - https://github.com/codenohito/website
-#### Check for Node and npm ####
-Make sure that you've installed Node and npm before attempting to install gulp.
-```bash
-node --version
-npm --version
-```
-#### Install the gulp command ####
-```bash
-npm install gulp-cli -g
-```
-#### Install npm package ####
-Run this command in your project directory:
+
+Getting started
+---------------
+
+Be sure you have Node.js, npm and npm-run installed.
+Tested with node 8.4.0, npm 5.3.0 and npm-run 4.1.2.
+
+#### Install npm packages
+
 ```bash
 npm install
 ```
-#### Run ####
-Run the gulp command in your project directory:
+
+#### Run project
+
+Run the gulp script in your project directory:
+
 ```bash
-gulp
+npm run gulp
 ```
