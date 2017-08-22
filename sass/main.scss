@@ -54,16 +54,13 @@ h2 {
   }
   .name {
     font-size: 0.8rem;
-    display: inline-block;
+    display: block;
     margin-bottom: 0;
-    margin-left: 12px;
+    text-align: center;
+    font-weight: 400;
   }
-  .transcr {
-    display: inline-block;
-    vertical-align: middle;
-    font-size: 0.6rem;
-    margin-bottom: 0;
-    margin-left: 2px;
-    color: #646464;
-  }
+}
+
+.content-about {
+  
 }

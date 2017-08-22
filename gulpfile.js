@@ -18,7 +18,7 @@ gulp.task('sass', function() {
 });
 
 gulp.task('browser-sync', function() {
-  browserSync.init(['dist/css/*.css', 'dist/js/*.js', 'dist/index.html'], {
+  browserSync.init(['dist/css/*.css', 'dist/js/*.js', 'dist/ru/index.html', 'dist/en/index.html'], {
     server: {
       baseDir: 'dist/'
     }
@@ -47,7 +47,7 @@ gulp.task('images', function () {
 });
 
 gulp.task('views', function buildHTML() {
-  return gulp.src('views/*.pug')
+  return gulp.src('views/*/*.pug')
   .pipe(plumber())
   .pipe(pug())
   .pipe(gulp.dest('dist/'))
