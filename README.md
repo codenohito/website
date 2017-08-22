@@ -6,8 +6,7 @@ Website of our team — http://codenohito.ru/
 Getting started
 ---------------
 
-Be sure you have Node.js, npm and npm-run installed.
-Tested with node 8.4.0, npm 5.3.0 and npm-run 4.1.2.
+Be sure you have Node.js, npm installed. Tested with node 8.4.0, npm 5.3.0.
 
 #### Install npm packages
 
