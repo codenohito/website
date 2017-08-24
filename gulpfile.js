@@ -10,19 +10,29 @@ var imagemin    = require("gulp-imagemin");
 var pngquant    = require('imagemin-pngquant');
 var pug         = require('gulp-pug');
 
+var config = {
+  prod: false,
+  destination: 'tmp/'
+};
+
+gulp.task('production', function() {
+  config.prod = true;
+  config.destination = 'dist/';
+});
+
 gulp.task('sass', function() {
   gulp.src('src/sass/main.scss')
   .pipe(plumber())
   .pipe(sass({outputStyle: 'compressed'}))
   .pipe(prefix('last 20 versions', '> 1%', 'ie 11'))
-  .pipe(gulp.dest('dist/css'));
+  .pipe(gulp.dest(config.destination + '/css'));
 });
 
 gulp.task('browser-sync', function() {
-  browserSync.init(['dist/css/*.css', 'dist/js/*.js',
-                    'dist/ru/index.html', 'dist/en/index.html'], {
+  browserSync.init(['tmp/css/*.css', 'tmp/js/*.js',
+                    'tmp/ru/index.html', 'tmp/en/index.html'], {
     server: {
-      baseDir: 'dist/'
+      baseDir: 'tmp/'
     }
   });
 });
@@ -33,14 +43,18 @@ gulp.task('scripts', function() {
     .pipe(uglify())
     .pipe(concat('main.js'))
     .pipe(rename({ suffix: ".min" }))
-    .pipe(gulp.dest('dist/js/'));
+    .pipe(gulp.dest(config.destination + 'js'));
 });
 
 gulp.task('favicon', function () {
-  return gulp.src('src/favicon.ico').pipe(plumber()).pipe(gulp.dest('dist'));
+  return gulp.src('src/favicon.ico')
+    .pipe(plumber())
+    .pipe(gulp.dest(config.destination));
 });
 gulp.task('icons', function () {
-  return gulp.src('src/ico/*').pipe(plumber()).pipe(gulp.dest('dist/ico'));
+  return gulp.src('src/ico/*')
+    .pipe(plumber())
+    .pipe(gulp.dest(config.destination + 'ico'));
 });
 gulp.task('images', ['favicon', 'icons'], function () {
   return gulp.src('src/images/*')
@@ -50,26 +64,17 @@ gulp.task('images', ['favicon', 'icons'], function () {
     svgoPlugins: [{removeViewBox: true}],
     use: [pngquant()]
   }))
-  .pipe(gulp.dest('dist/images'));
+  .pipe(gulp.dest(config.destination + 'images'));
 });
 
 gulp.task('views', function buildHTML() {
-  return gulp.src('src/views/**/*.pug')
+  return gulp.src('src/views/**/index.pug')
   .pipe(plumber())
-  .pipe(pug())
-  .pipe(gulp.dest('dist/'))
+  .pipe(pug({ data: { production_env: config.prod } }))
+  .pipe(gulp.dest(config.destination))
 });
 
-// gulp.task('production_views', function buildHTML() {
-//   return gulp.src('src/views/**/*.pug')
-//   .pipe(plumber())
-//   .pipe(pug({ data: { production_env: true } }))
-//   .pipe(gulp.dest('dist/'))
-// });
-
-// gulp.task('build', ['production_views', 'sass', 'scripts', 'images'], function () {
-//   return true;
-// });
+gulp.task('build', ['views', 'sass', 'scripts', 'images']);
 
 gulp.task('default', ['views', 'sass', 'browser-sync', 'scripts', 'images'], function () {
   gulp.watch('src/sass/**/*.scss', ['sass']);

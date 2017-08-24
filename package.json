@@ -21,7 +21,8 @@
     "imagemin-pngquant": "^5.0.1"
   },
   "scripts": {
-    "gulp": "gulp"
+    "gulp": "gulp",
+    "build": "gulp production build"
   },
   "dependencies": {}
 }
