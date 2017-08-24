@@ -25,7 +25,7 @@ gulp.task('sass', function() {
   .pipe(plumber())
   .pipe(sass({outputStyle: 'compressed'}))
   .pipe(prefix('last 20 versions', '> 1%', 'ie 11'))
-  .pipe(gulp.dest(config.destination + '/css'));
+  .pipe(gulp.dest(config.destination + 'css'));
 });
 
 gulp.task('browser-sync', function() {
