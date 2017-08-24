@@ -4,6 +4,7 @@ var sass        = require('gulp-sass');
 var prefix      = require('gulp-autoprefixer');
 var plumber     = require('gulp-plumber');
 var uglify      = require('gulp-uglify');
+var concat      = require('gulp-concat');
 var rename      = require("gulp-rename");
 var imagemin    = require("gulp-imagemin");
 var pngquant    = require('imagemin-pngquant');
@@ -18,10 +19,8 @@ gulp.task('sass', function() {
 });
 
 gulp.task('browser-sync', function() {
-  browserSync.init(['dist/css/*.css',
-                    'dist/js/*.js',
-                    'dist/ru/index.html',
-                    'dist/en/index.html'], {
+  browserSync.init(['dist/css/*.css', 'dist/js/*.js',
+                    'dist/ru/index.html', 'dist/en/index.html'], {
     server: {
       baseDir: 'dist/'
     }
@@ -30,12 +29,11 @@ gulp.task('browser-sync', function() {
 
 gulp.task('scripts', function() {
   gulp.src('src/js/*.js')
-  .pipe(plumber())
-  .pipe(uglify())
-  .pipe(rename({
-    suffix: ".min",
-  }))
-  .pipe(gulp.dest('dist/js/'))
+    .pipe(plumber())
+    .pipe(uglify())
+    .pipe(concat('main.js'))
+    .pipe(rename({ suffix: ".min" }))
+    .pipe(gulp.dest('dist/js/'));
 });
 
 gulp.task('favicon', function () {
