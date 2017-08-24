@@ -50,6 +50,8 @@ html(lang='ru')
       footer.m-ftr
         .container
           a(href="mailto:mstrdymio@gmail.com") mstrdymio@gmail.com
+          if production_env == true
+            | Хуй
     script(src='/js/main.min.js')
     script(src='/js/imagesloaded.pkgd.min.min.js')
     script(src='/js/anime.min.min.js')
