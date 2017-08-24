@@ -1,0 +1,19 @@
+server {
+  listen 80;
+  listen [::]:80;
+
+  server_name codenohito.ru;
+
+  root /home/dymio/www/codenohito_website;
+
+  rewrite ^/projects/?$ http://codenohito.ru/en permanent;
+  rewrite ^(/projects/grandzagran.html).*$ http://codenohito.ru/en redirect;
+  rewrite ^/$ http://codenohito.ru/en permanent;
+}
+
+server {
+  listen 80;
+  listen [::]:80;
+  server_name www.codenohito.ru;
+  rewrite ^(.*) http://codenohito.ru$1 permanent;
+}

@@ -21,3 +21,12 @@ Run the gulp script in your project directory:
 ```bash
 npm run gulp
 ```
+
+Deploy
+------
+
+Run deploy script:
+
+```bash
+./deploy.sh
+```
