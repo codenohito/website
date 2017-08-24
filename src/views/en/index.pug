@@ -1,10 +1,23 @@
-doctype html  
-html(lang='ru')  
+doctype html
+html(lang='en')
   head
     meta(charset="UTF-8")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible" content="ie=edge")
-    title Codenohito
+    title Codenohito — agile web-applications development with Ruby on Rails
+    meta(name="description" content="Web-development from design prototypes to a ready web-application")
+    meta(name="twitter:card" content="summary")
+    meta(property="og:type" content="website")
+    meta(property="og:title" content="Codenohito — agile web-applications development with Ruby on Rails")
+    meta(property="og:description" content="Web-development from design prototypes to a ready web-application")
+    meta(property="og:image" content="http://codenohito.ru/ico/cnh_logo_image.png")
+    link(rel="icon" sizes="16x16 32x32 48x48 64x64" href="/favicon.ico")
+    <!--[if IE]>
+    <link rel="shortcut icon" href="/favicon.ico">
+    <![endif]-->
+    link(rel="apple-touch-icon" href="/ico/cnh_touch_icon.png")
+    meta(name="msapplication-TileColor" content="#fff")
+    meta(name="msapplication-TileImage" content="/ico/cnh_tile_image.png")
     link(href='/css/main.css', rel='stylesheet')
     script.
       document.documentElement.className = 'js';
@@ -18,7 +31,7 @@ html(lang='ru')
       return support;
       }
   body
-    main      
+    main
       include includes/hdr.pug
       .container
         .morph-wrap
@@ -36,9 +49,10 @@ html(lang='ru')
           include includes/portfolio.pug
       footer.m-ftr
         .container
-          a(href="mailto:http://mstrdymio@gmail.com") mstrdymio@gmail.com      
+          a(href="mailto:mstrdymio@gmail.com") mstrdymio@gmail.com
     script(src='/js/main.min.js')
-    script(src='/js/imagesloaded.pkgd.min.min.js')
-    script(src='/js/anime.min.min.js')
-    script(src='/js/scrollMonitor.min.js')
-    script(src='/js/morph.min.js')
+
+    if production_env == true
+      // Yandex.Metrika counter
+      <script type="text/javascript" > (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter21646075 = new Ya.Metrika({ id:21646075, clickmap:true, trackLinks:true, accurateTrackBounce:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/21646075" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+      // /Yandex.Metrika counter
