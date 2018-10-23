@@ -7,18 +7,18 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "browser-sync": "^2.23.5",
+    "browser-sync": "^2.26.3",
     "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^4.1.0",
-    "gulp-cli": "^1.4.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-cli": "^2.0.1",
     "gulp-concat": "^2.6.1",
-    "gulp-imagemin": "^3.4.0",
+    "gulp-imagemin": "^4.1.0",
     "gulp-plumber": "^1.2.0",
-    "gulp-pug": "^3.3.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.1.0",
-    "gulp-uglify": "^3.0.0",
-    "imagemin-pngquant": "^5.0.1"
+    "gulp-pug": "^4.0.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.1",
+    "imagemin-pngquant": "^6.0.0"
   },
   "scripts": {
     "gulp": "gulp",
